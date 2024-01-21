@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of Death</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div id="main" class="intro-container">
+        <h1>나는 미친 예언가</h1>
+        <h2>인공지능 예언가가 당신의 죽음을 예측합니다.</h2>
+        <h2>인공지능 예언가가 당신의 미래를 예측합니다.</h2>
+        <h3>by Binary</h3>
+        <img src="binary.png" alt="chatbinary">
+        <h1>"죽음이 두렵나?"</h1>
+    </div>
+    <div id="intro" class="intro-container">
+        <label for="date">생년월일</label>
+        <input id="date" type="date">
+        <label for="hour">태어난 시간</label>
+        <select id = "hour">
+            <option value="">모름</option>
+            <option value="00">00</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+        </select>
+        <button onclick="start()">내가 언제죽는지 확인</button>
+
+    </div>
+<!-- style="display: none;" -->
+    <div id="chat" style="display: none;">
+        <ul id="chat-messages"></ul>
+        <input type="text" id="message-input" placeholder="메시지 입력...">
+        <button id="send-button" onclick="sendMessage()">전송</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
