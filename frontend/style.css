@@ -60,6 +60,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+#loader {
+    font-size: 25px;
+    text-align: center;
+}
 /* .intro-container img {
     width: 50%;
     min-width: 300px;

@@ -43,6 +43,9 @@ async function sendRequest(message) {
         }
 
         const data = await response.json();
+
+        document.getElementById('loader').style.display = "none";
+
         assistantMessages.push(data.assistant[0].message.content);
         return data.assistant[0].message.content;
     } catch (error) {
@@ -61,10 +64,13 @@ function appendMessage(role, content) {
 }
 
 async function sendMessage() {
+    document.getElementById('loader').style.display = "block";
+
     let userInput = document.getElementById('message-input').value;
     console.log('chk : ' + chk)
     if(chk==='first') {
         userInput = '저는 언제 어떻게 죽나요?'
+        chk = 'not first';
     }
     if (!userInput.trim()) return;
 
