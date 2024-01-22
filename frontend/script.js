@@ -17,7 +17,6 @@ function start() {
     document.getElementById("intro").style.display = "none";
     document.getElementById("chat").style.display = "block";
 
-    console.log('11-1');
     chk = 'first';
     sendMessage();
     // firstMessages.push('저는 언제 어떻게 죽나요?');
@@ -27,6 +26,7 @@ function start() {
 async function sendRequest(message) {
     try {
         const response = await fetch('https://bdskd4xjo3ioa6ii2ykdnhwhvi0ncwzl.lambda-url.ap-northeast-2.on.aws/fortuneTell', {
+            // const response = await fetch('http://localhost:3000/fortuneTell', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -57,9 +57,26 @@ async function sendRequest(message) {
 function appendMessage(role, content) {
     const messagesContainer = document.getElementById('chat-messages');
     const messageElement = document.createElement('li');
+
+    if (role === 'assistant') {
+        // Assistant 메시지일 경우에는 링크를 추가
+        const p = document.createElement('p');
+        p.innerHTML = '링크를 눌러 복채를 보내면 더 좋은 일이 있을거야. -> ';
+        const link = document.createElement('a');
+        link.href = 'https://toss.me/godofdeath';
+        link.innerHTML = '복채 보내기';
+        p.appendChild(link);
+
+        // Assistant 메시지와 함께 추가
+        messageElement.innerHTML = content + '<br>' + p.innerHTML;
+    } else {
+        // User 메시지일 경우에는 그냥 텍스트만 추가
+        messageElement.textContent = content;
+    }
+
     messageElement.className = role === 'user' ? 'user-message' : 'assistant-message';
-    messageElement.textContent = content;
     messagesContainer.appendChild(messageElement);
+
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 

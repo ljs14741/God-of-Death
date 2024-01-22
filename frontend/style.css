@@ -1,48 +1,58 @@
 body {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #1c1c1c, #000000);
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 #main, #intro {
-    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background: linear-gradient(to right, #4d4d4d, #333333);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     padding: 30px;
     margin: 20px auto;
     text-align: center;
     position: relative;
 }
 
-#main h1, #main h2, #main h3,
-#intro h1, #intro h2, #intro h3 {
-    color: #333;
-    font-size: 24px; /* 헤더 태그의 기본 글자 크기를 조정 */
+#main h1,
+#intro h1 {
+    font-family: 'Creepster', cursive;
+    color: #ff6666;
+    margin-bottom: 3px; /* 간격 조절 */
+}
+
+#main h2,
+#intro h2 {
+    font-family: 'Mystery Quest', cursive;
+    color: #ff6666;
+    margin-top: 0; /* 기본 마진 초기화 */
+    margin-bottom: 10px; /* 간격 조절 */
 }
 
 button {
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to right, #67b26f, #4ca2cd);
+    background: linear-gradient(to right, #990000, #ff3333);
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 button:hover {
-    background: linear-gradient(to right, #4ca2cd, #67b26f);
+    background: linear-gradient(to right, #ff3333, #990000);
 }
 
 #chat-container {
-    border: 2px solid #ddd;
+    border: 2px solid #333;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     max-width: 400px;
     margin: 20px auto;
-    background: linear-gradient(to right, #e0e0e0, #f9f9f9);
+    background: linear-gradient(to right, #666666, #444444);
     position: relative;
 }
 
@@ -53,34 +63,75 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('pattern.png');
+    background: url('scary_pattern.png');
     opacity: 0.1;
     border-radius: 15px;
+}
+
+#chat-messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 300px; /* 스크롤이 필요한 경우 조절 가능 */
+}
+
+.user-message, .assistant-message {
+    border-radius: 10px;
+    padding: 8px;
+    margin: 4px 0;
+}
+
+.user-message {
+    text-align: right;
+    background-color: #666; /* 유저 메시지 배경색 */
+    color: #fff;
+}
+
+.assistant-message {
+    text-align: left;
+    background-color: #333; /* 어시스턴트 메시지 배경색 */
+    color: #fff;
+}
+
+#loader {
+    text-align: center;
+    margin: 20px 0;
 }
 
 #message-input {
     width: 60%;
     padding: 14px;
-    border: 2px solid #ccc;
+    border: 2px solid #666;
     border-radius: 8px;
     margin-right: 5px;
+    color: #333;
 }
 
 #send-button {
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to right, #67b26f, #4ca2cd);
+    background: linear-gradient(to right, #990000, #ff3333);
     color: #fff;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 #send-button:hover {
-    background: linear-gradient(to right, #4ca2cd, #67b26f);
+    background: linear-gradient(to right, #ff3333, #990000);
 }
 
-.intro-container img {
-    max-width: 100%; /* 이미지의 최대 너비를 100%로 설정 */
-    height: auto; /* 이미지의 높이는 자동으로 조절 */
+#main h3, #intro h3, #main h4, #intro h4 {
+    margin: 5px 0; /* 원하는 간격으로 조절 가능 */
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px; /* 레이블과 입력 요소 사이의 간격 조절 */
+}
+
+#date, #hour {
+    width: 150px; /* 입력 요소의 너비 조절 */
 }
