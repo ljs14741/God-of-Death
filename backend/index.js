@@ -1,8 +1,15 @@
 const OpenAI = require('openai');
+const serverless = require('serverless-http')
 const cors = require('cors')
 const express = require('express')
 const app = express()
-app.use(cors())
+
+let corsOptions = {
+  origin: 'https://godofdeath.pages.dev',
+  credentials: true
+}
+app.use(cors(corsOptions));
+// app.use(cors())
 
 const openai = new OpenAI({
   apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
@@ -59,6 +66,4 @@ app.post('/fortuneTell', async function (req, res) {
 
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+module.exports.handler = serverless(app)

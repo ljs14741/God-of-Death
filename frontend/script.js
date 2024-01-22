@@ -26,7 +26,7 @@ function start() {
 
 async function sendRequest(message) {
     try {
-        const response = await fetch('http://localhost:3000/fortuneTell', {
+        const response = await fetch('https://bdskd4xjo3ioa6ii2ykdnhwhvi0ncwzl.lambda-url.ap-northeast-2.on.aws/fortuneTell', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
