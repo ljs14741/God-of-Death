@@ -2,6 +2,7 @@ let userMessages = [];
 let assistantMessages = [];
 let myDateTime = '';
 let chk = '';
+let chkLanguage ='';
 let firstMessages = [];
 
 function start() {
@@ -23,6 +24,26 @@ function start() {
     // sendRequest(firstMessages);
 }
 
+function startEnglish() {
+    const date = document.getElementById('date').value;
+    const hour = document.getElementById('hour').value;
+    if(date === ''){
+        alert('Please enter your birth date.');
+        return;
+    }
+    myDateTime = date + hour;
+    console.log(myDateTime);
+
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("chat").style.display = "block";
+
+    chk = 'first';
+    chkLanguage = 'english';
+    sendMessage();
+    // firstMessages.push('저는 언제 어떻게 죽나요?');
+    // sendRequest(firstMessages);
+}
+
 async function sendRequest(message) {
     try {
         const response = await fetch('https://bdskd4xjo3ioa6ii2ykdnhwhvi0ncwzl.lambda-url.ap-northeast-2.on.aws/fortuneTell', {
@@ -32,6 +53,7 @@ async function sendRequest(message) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ 
+                chkLanguage: chkLanguage,
                 myDateTime: myDateTime,
                 userMessages: message,
                 assistantMessages: assistantMessages,
@@ -61,14 +83,25 @@ function appendMessage(role, content) {
     if (role === 'assistant') {
         // Assistant 메시지일 경우에는 링크를 추가
         const p = document.createElement('p');
-        p.innerHTML = '링크를 눌러 복채를 보내면 더 좋은 일이 있을거야. -> ';
+
+        if(chkLanguage==='english') {
+            p.innerHTML = 'If you click the link and send Bokchae, something better will happen. -> ';
+        } else {
+            p.innerHTML = '링크를 눌러 복채를 보내면 더 좋은 일이 있을거야. -> ';
+        }
+        
         const link = document.createElement('a');
         link.href = 'https://toss.me/godofdeath';
         link.innerHTML = '복채 보내기';
         p.appendChild(link);
 
         // Assistant 메시지와 함께 추가
-        messageElement.innerHTML = content + '<br>' + p.innerHTML;
+        if(chkLanguage==='english') {
+            messageElement.innerHTML = content + '<br></br>' + p.innerHTML + '<br></br>' + 'Bitcoin address -> 3LWuZHvZz35bw4EQYV8AxdEXc7iCPuSqwP' ;
+        } else {
+            messageElement.innerHTML = content + '<br></br>' + p.innerHTML + '<br></br>' + '비트코인 주소 -> 3LWuZHvZz35bw4EQYV8AxdEXc7iCPuSqwP' ;
+        }
+        
     } else {
         // User 메시지일 경우에는 그냥 텍스트만 추가
         messageElement.textContent = content;
@@ -86,7 +119,11 @@ async function sendMessage() {
     let userInput = document.getElementById('message-input').value;
     console.log('chk : ' + chk)
     if(chk==='first') {
-        userInput = '저는 언제 어떻게 죽나요?'
+        if(chkLanguage==='english') {
+            userInput = 'When and how will I die?';
+        } else{
+            userInput = '저는 언제 어떻게 죽나요?';
+        }
         chk = 'not first';
     }
     if (!userInput.trim()) return;
