@@ -154,3 +154,11 @@ label {
     min-width: 350px;
     min-height: 200px;
 }
+
+/* style.css 파일에 추가 */
+@media only screen and (max-width: 600px) {
+    .kakao-ad {
+        min-width: auto;
+        min-height: auto;
+    }
+}
