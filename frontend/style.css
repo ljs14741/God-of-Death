@@ -135,3 +135,12 @@ label {
 #date, #hour {
     width: 150px; /* 입력 요소의 너비 조절 */
 }
+
+.kakao-ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-width: 350px;
+    min-height: 200px;
+}
