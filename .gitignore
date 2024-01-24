@@ -1,2 +1,4 @@
-backend/backend.zip
-.gitignore
+*.zip
+*.gitignore
+/index.html
+./frontend/index.html
