@@ -113,6 +113,37 @@ function appendMessage(role, content) {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
+function shareTwitter() {
+    var sendText = "개발새발"; // 전달할 텍스트
+    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+function shareFacebook() {
+    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
+
+function shareKakao() {
+    Kakao.init('752febc9dd3a3d4c85eec104e393784b');
+  
+    // // 카카오링크 버튼 생성
+    Kakao.Share.createDefaultButton({
+      container: '#btnKakao', 
+      objectType: 'feed',
+      content: {
+        title: 'GodofDeath - 죽음 예측 테스트', 
+        description: '당신의 죽음을 예측합니다.', 
+        imageUrl: 'https://godofdeath.pages.dev', 
+        link: {
+           mobileWebUrl: 'https://godofdeath.pages.dev',
+           webUrl: 'https://godofdeath.pages.dev'
+        },
+      },
+    });
+  }
+
+
 async function sendMessage() {
     document.getElementById('loader').style.display = "block";
 
