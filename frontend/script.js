@@ -113,6 +113,13 @@ function appendMessage(role, content) {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
+function nextQuestion(nextQuestionId) {
+    document.getElementById('question1').style.display = 'none';
+    document.getElementById('question2').style.display = 'none';
+    document.getElementById('question3').style.display = 'none';
+    document.getElementById(nextQuestionId).style.display = 'block';
+}
+
 function shareTwitter() {
     var sendText = "GodofDeath - 죽음 예측 테스트"; // 전달할 텍스트
     var sendUrl = "https://godofdeath.pages.dev"; // 전달할 URL
