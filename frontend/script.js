@@ -117,6 +117,11 @@ function nextQuestion(nextQuestionId) {
     document.getElementById('question1').style.display = 'none';
     document.getElementById('question2').style.display = 'none';
     document.getElementById('question3').style.display = 'none';
+    document.getElementById('question4').style.display = 'none';
+    document.getElementById('question5').style.display = 'none';
+    document.getElementById('question6').style.display = 'none';
+    document.getElementById('question7').style.display = 'none';
+    document.getElementById('question8').style.display = 'none';
     document.getElementById(nextQuestionId).style.display = 'block';
 }
 
