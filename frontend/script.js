@@ -4,12 +4,20 @@ let myDateTime = '';
 let chk = '';
 let chkLanguage ='';
 let firstMessages = [];
+let mbti = '';
+let username = '';
 
 function start() {
     const date = document.getElementById('date').value;
     const hour = document.getElementById('hour').value;
-    if(date === ''){
+    mbti = document.getElementById('mbti').value;
+    username = document.getElementById('username').value;
+    if(date === '') {
         alert('생년월일을 입력해 주세요.');
+        return;
+    }
+    if(username === '') {
+        alert('이름을 입력해 주세요.');
         return;
     }
     myDateTime = date + hour;
@@ -27,8 +35,14 @@ function start() {
 function startEnglish() {
     const date = document.getElementById('date').value;
     const hour = document.getElementById('hour').value;
-    if(date === ''){
+    mbti = document.getElementById('mbti').value;
+    username = document.getElementById('username').value;
+    if(date === '') {
         alert('Please enter your birth date.');
+        return;
+    }
+    if(username === '') {
+        alert('Please enter your name.');
         return;
     }
     myDateTime = date + hour;
@@ -53,6 +67,8 @@ async function sendRequest(message) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ 
+                mbti: mbti,
+                username: username,
                 chkLanguage: chkLanguage,
                 myDateTime: myDateTime,
                 userMessages: message,

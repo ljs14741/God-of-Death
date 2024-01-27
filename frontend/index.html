@@ -69,6 +69,32 @@
                 <option value="23">23</option>
                 <option value="24">24</option>
             </select>
+            <br>
+            <label for="mbti">성격유형검사 (MBTI)</label>
+            <select id = "mbti">
+                <option value="">모름(do not know)</option>
+                <option value="INTJ">INTJ</option>
+                <option value="INTP">INTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESFP">ESFP</option>
+                <option value="ESTP">ESTP</option>
+            </select>
+            <br>
+            <form>
+                <label for="username">당신의 이름은? (Name)</label>
+                <input type="text" id="username" name="username" required>
+            </form>
             <form id="quizForm">
                 <div id="question1">
                     <p>1/7. 손을 쓰지 않고 양반다리로 앉았다 일어나는 것이 가능한지?</p>
@@ -143,7 +169,7 @@
                 </div>
 
                 <div id="question6" style="display:none;">
-                    <p>6/7. 하루에 1시간 이상 걷는다. 혹은 그에 걸맞는 운동을하는지?</p>
+                    <p>6/7. 하루에 1시간 이상 걷는다. 혹은 그에 걸맞는 운동을 하는지?</p>
                     <label>
                         <input type="radio" name="q6" value="2"> 예
                     </label>
@@ -165,6 +191,7 @@
                     <br><br>
                     <input type="button" value="다음" onclick="nextQuestion('question8')">
                 </div>
+                
                 <div id="question8" style="display:none;">
                     <p>질문이 모두 끝났습니다. [나의 마지막을 확인하기] 버튼 클릭</p>
                     <p>All questions have been answered. Click the [Check my last] button</p>
