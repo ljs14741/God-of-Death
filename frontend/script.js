@@ -87,7 +87,7 @@ function appendMessage(role, content) {
         if(chkLanguage==='english') {
             p.innerHTML = 'If you click the link and send Bokchae, something better will happen. -> ';
         } else {
-            p.innerHTML = '링크를 눌러 복채를 보내면 더 좋은 일이 있을거야. -> ';
+            p.innerHTML = '복채를 보내면 더 좋은 일이 있을거야. → ';
         }
         
         const link = document.createElement('a');
@@ -97,9 +97,9 @@ function appendMessage(role, content) {
 
         // Assistant 메시지와 함께 추가
         if(chkLanguage==='english') {
-            messageElement.innerHTML = content + '<br></br>' + p.innerHTML + '<br></br>' + 'Bitcoin address -> 3LWuZHvZz35bw4EQYV8AxdEXc7iCPuSqwP'+ '<br>' + 'EOS address: eosupbitsusr (MEMO) 0c0169c3-7d8e-435f-b409-71c1e74c117f';
+            messageElement.innerHTML = content + '<br></br>' + p.innerHTML;
         } else {
-            messageElement.innerHTML = content + '<br></br>' + p.innerHTML + '<br></br>' + '비트코인 입금주소 -> 3LWuZHvZz35bw4EQYV8AxdEXc7iCPuSqwP' + '<br>' + '이오스 입금주소: eosupbitsusr (MEMO) 0c0169c3-7d8e-435f-b409-71c1e74c117f';
+            messageElement.innerHTML = content + '<br></br>' + p.innerHTML;
         }
         
     } else {

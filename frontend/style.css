@@ -16,7 +16,7 @@ body {
 }
 
 
-#main, #intro {
+#main, #intro, #bottom {
     background: linear-gradient(to right, #4d4d4d, #333333);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -164,9 +164,9 @@ label {
 }
 
 .link-icon { position: relative; display: inline-block; width: auto; font-size: 14px; font-weight: 500; color: #333; margin-right: 10px; padding-top: 50px; }
-.link-icon.twitter { background-image: url(./images/icon-twitter.png); background-repeat: no-repeat; }
-.link-icon.facebook { background-image: url(./images/icon-facebook.png); background-repeat: no-repeat; } 
-.link-icon.kakao { background-image: url(./images/icon-kakao.png); background-repeat: no-repeat; }
+.link-icon.twitter { background-image: url(./images/icon-twitter.png); background-repeat: no-repeat; color: #fff;}
+.link-icon.facebook { background-image: url(./images/icon-facebook.png); background-repeat: no-repeat; color: #fff;} 
+.link-icon.kakao { background-image: url(./images/icon-kakao.png); background-repeat: no-repeat; color: #fff; }
 
 
 @media only screen and (max-width: 767px) {
@@ -190,4 +190,20 @@ label {
     /* 여기에 원하는 스타일을 추가하세요 */
     background-color: #fff;
     /* 다른 스타일을 추가할 수 있습니다 */
+}
+
+a {
+    color: #ff0000; /* 빨간색 */
+    text-decoration: none; /* 링크에 밑줄 제거 */
+}
+
+a:hover {
+    color: #cc0000; /* 마우스 오버시 빨간색 어둡게 */
+}
+
+#bottom {
+    margin: 20px;
+    font-family: 'Noto Sans KR', sans-serif; /* 글씨체 변경 */
+    font-size: 16px; /* 글자 크기 변경 */
+    color: #fff; /* 글자 색상 변경 */
 }
