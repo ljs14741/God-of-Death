@@ -155,6 +155,15 @@ label {
     min-height: 200px;
 }
 
+.kakao-ad-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-width: 320px;
+    min-height: 60px;
+}
+
 /* style.css 파일에 추가 */
 @media only screen and (max-width: 600px) {
     .kakao-ad {
