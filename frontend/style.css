@@ -142,7 +142,7 @@ label {
     margin-right: 10px; /* 레이블과 입력 요소 사이의 간격 조절 */
 }
 
-#date, #hour {
+#date, #hour, #mbti, #username{
     width: 150px; /* 입력 요소의 너비 조절 */
 }
 
@@ -172,7 +172,7 @@ label {
     }
 }
 
-.link-icon { position: relative; display: inline-block; width: auto; font-size: 14px; font-weight: 500; color: #333; margin-right: 10px; padding-top: 50px; }
+.link-icon { position: relative; display: inline-block; width: auto; font-size: 14px; font-weight: 500; color: #333; margin-right: 30px; padding-top: 50px; }
 .link-icon.twitter { background-image: url(./images/icon-twitter.png); background-repeat: no-repeat; color: #fff;}
 .link-icon.facebook { background-image: url(./images/icon-facebook.png); background-repeat: no-repeat; color: #fff;} 
 .link-icon.kakao { background-image: url(./images/icon-kakao.png); background-repeat: no-repeat; color: #fff; }

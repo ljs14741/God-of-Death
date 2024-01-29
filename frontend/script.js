@@ -130,15 +130,30 @@ function appendMessage(role, content) {
 }
 
 function nextQuestion(nextQuestionId) {
-    document.getElementById('question1').style.display = 'none';
-    document.getElementById('question2').style.display = 'none';
-    document.getElementById('question3').style.display = 'none';
-    document.getElementById('question4').style.display = 'none';
-    document.getElementById('question5').style.display = 'none';
-    document.getElementById('question6').style.display = 'none';
-    document.getElementById('question7').style.display = 'none';
-    document.getElementById('question8').style.display = 'none';
-    document.getElementById(nextQuestionId).style.display = 'block';
+
+    if(nextQuestionId !== 'question1') {
+        // 현재 질문에 해당하는 라디오 버튼의 값을 가져옴
+        let currentQuestionId = nextQuestionId.replace('question', ''); // 현재 질문 번호
+        console.log('currentQuestionId: ' + currentQuestionId);
+        currentQuestionId = currentQuestionId-1;
+        console.log('currentQuestionId2: ' + currentQuestionId);
+
+        let radioValue = $('input[name=q' + currentQuestionId + ']:checked').val();
+        console.log('radioValue: ' + radioValue);
+
+        // 만약 라디오 버튼이 체크되어 있지 않으면 알림 메시지를 띄우고 함수 종료
+        if (!radioValue) {
+            alert('라디오 버튼을 선택하세요.');
+            return;
+        }
+    }
+
+    // 현재 질문에 해당하는 라디오 버튼을 체크함
+    // $('input[name=q' + currentQuestionId + '][value=' + radioValue + ']').prop('checked', true);
+
+    // 현재 질문 숨기고 다음 질문 표시
+    $('#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8').hide();
+    $('#' + nextQuestionId).show();
 }
 
 function shareTwitter() {
