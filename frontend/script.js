@@ -20,13 +20,21 @@ function start() {
         alert('이름을 입력해 주세요.');
         return;
     }
+
+    let radiochk = $('input[name=q7]:checked').val();
+    if(radiochk === undefined) {
+        alert('모든 질문에 답을 해주세요.');
+        return;
+    }
+
     myDateTime = date + hour;
     console.log(myDateTime);
 
     document.getElementById("intro").style.display = "none";
     document.getElementById("chat").style.display = "block";
 
-    chk = 'first';
+    chk = 'first';  
+    
     sendMessage();
     // firstMessages.push('저는 언제 어떻게 죽나요?');
     // sendRequest(firstMessages);
@@ -43,6 +51,11 @@ function startEnglish() {
     }
     if(username === '') {
         alert('Please enter your name.');
+        return;
+    }    
+    let radiochk = $('input[name=q7]:checked').val();
+    if(radiochk === undefined) {
+        alert('Please answer all questions.');
         return;
     }
     myDateTime = date + hour;
