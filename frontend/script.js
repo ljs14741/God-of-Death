@@ -116,7 +116,7 @@ function appendMessage(role, content) {
         if(chkLanguage==='english') {
             p.innerHTML = 'If you click the link and send Bokchae, something better will happen. -> ';
         } else {
-            p.innerHTML = '복채를 보내면 더 좋은 일이 있을거야. → ';
+            p.innerHTML = '복채를 보내면 목숨이 연장될거야. → ';
         }
         
         const link = document.createElement('a');
