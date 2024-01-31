@@ -144,6 +144,7 @@ label {
 
 #date, #hour, #mbti, #username{
     width: 150px; /* 입력 요소의 너비 조절 */
+    margin-bottom: 10px;
 }
 
 .kakao-ad {
