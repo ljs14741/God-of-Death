@@ -163,10 +163,53 @@ function nextQuestion(nextQuestionId) {
 
     // 현재 질문에 해당하는 라디오 버튼을 체크함
     // $('input[name=q' + currentQuestionId + '][value=' + radioValue + ']').prop('checked', true);
-
     // 현재 질문 숨기고 다음 질문 표시
     $('#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8').hide();
     $('#' + nextQuestionId).show();
+}
+
+function nextQuestion11(nextQuestionId) {
+
+    if(nextQuestionId !== 'question11') {
+        // 현재 질문에 해당하는 라디오 버튼의 값을 가져옴
+        let currentQuestionId = nextQuestionId.replace('question', ''); // 현재 질문 번호
+        console.log('currentQuestionId: ' + currentQuestionId);
+        currentQuestionId = currentQuestionId-11;
+        console.log('currentQuestionId2: ' + currentQuestionId);
+
+        let radioValue = $('input[name=q' + currentQuestionId + ']:checked').val();
+        console.log('radioValue: ' + radioValue);
+
+        // 만약 라디오 버튼이 체크되어 있지 않으면 알림 메시지를 띄우고 함수 종료
+        if (!radioValue) {
+            alert('Select a radio button.');
+            return;
+        }
+    }
+
+    // 현재 질문에 해당하는 라디오 버튼을 체크함
+    // $('input[name=q' + currentQuestionId + '][value=' + radioValue + ']').prop('checked', true);
+    // 현재 질문 숨기고 다음 질문 표시
+    $('#question11, #question22, #question33, #question44, #question55, #question66, #question77, #question88').hide();
+    $('#' + nextQuestionId).show();
+}
+
+
+function transfer(transferChk) {
+    if(transferChk === 'english') {        
+        $('#transfer1').hide();
+        $('#transfer2').show();
+        $('#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8').hide();
+        $('#question11').show();
+    } else{
+        
+        $('#transfer1').show();
+        $('#transfer2').hide();
+        $('#question11, #question22, #question33, #question44, #question55, #question66, #question77, #question88').hide();
+        $('#question1').show();
+    }
+
+
 }
 
 function shareTwitter() {
@@ -198,7 +241,6 @@ function shareKakao() {
       },
     });
   }
-
 
 async function sendMessage() {
     document.getElementById('loader').style.display = "block";

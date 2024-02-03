@@ -103,8 +103,10 @@
                 <label for="username">당신의 이름은? (Name)</label>
                 <input type="text" id="username" name="username" required>
             </form>
-            <form id="quizForm">
+            <form id="quizForm">                
                 <div id="question1">
+                    <input id="transfer1" type="button" value="transfer" onclick="transfer('english')" >
+                    <!-- <input id="transfer2" type="button" value="번역" onclick="transfer()" style="display:none;"> -->
                     <p>1/7. 손을 쓰지 않고 양반다리로 앉았다 일어나는 것이 가능한지?</p>
                     <label>
                         <input type="radio" name="q1" value="2"> 가능
@@ -205,9 +207,116 @@
                     <input type="button" value="이전" onclick="nextQuestion('question6')">
                     <input type="button" value="다음" onclick="nextQuestion('question8')">
                 </div>
-                
                 <div id="question8" style="display:none;">
                     <p>질문이 모두 끝났습니다. [나의 마지막을 확인하기] 버튼 클릭</p>
+                </div>
+
+                <div id="question11" style="display:none;">
+                    <input id="transfer2" type="button" value="번역" onclick="transfer()" style="display:none;">
+                    <p>1/7. Is it possible to sit cross-legged and stand up without using your hands?</p>
+                    <label>
+                        <input type="radio" name="q11" value="2"> possible
+                    </label>
+                    <label>
+                        <input type="radio" name="q11" value="4"> impossible
+                    </label>
+                    <br><br>
+                    <input type="button" value="next" onclick="nextQuestion11('question22')">
+                </div>
+
+                <div id="question22" style="display:none;">
+                    <p>2/7. Do you smoke?</p>
+                    <label>
+                        <input type="radio" name="q22" value="seoul"> non smoking
+                    </label>
+                    <label>
+                        <input type="radio" name="q22" value="tokyo"> less than a pack
+                    </label>
+                    <label>
+                        <input type="radio" name="q22" value="beijing"> More than one pack
+                    </label>
+                    <br><br>
+                    <input type="button" value="before" onclick="nextQuestion11('question11')">
+                    <input type="button" value="next" onclick="nextQuestion11('question33')">
+                </div>
+
+                <div id="question33" style="display:none;">
+                    <p>3/7. Do you drink too much??</p>
+                    <label>
+                        <input type="radio" name="q33" value="seoul"> Can't eat at all
+                    </label>
+                    <label>
+                        <input type="radio" name="q33" value="tokyo"> just ordinary
+                    </label>
+                    <label>
+                        <input type="radio" name="q33" value="beijing"> I ate a bit too much
+                    </label>
+                    <br><br>
+                    <input type="button" value="이전" onclick="nextQuestion11('question22')">
+                    <input type="button" value="다음" onclick="nextQuestion11('question44')">
+                </div>
+
+                <div id="question44" style="display:none;">
+                    <p>4/7. What is my body mass index (BMI)?</p>
+                    <label>
+                        <input type="radio" name="q44" value="2"> underweight
+                    </label>
+                    <label>
+                        <input type="radio" name="q44" value="4"> normal
+                    </label>
+                    <label>
+                        <input type="radio" name="q44" value="4"> overweight
+                    </label>
+                    <label>
+                        <input type="radio" name="q44" value="4"> obesity
+                    </label>
+                    <br><br>
+                    <input type="button" value="이전" onclick="nextQuestion11('question33')">
+                    <input type="button" value="다음" onclick="nextQuestion11('question55')">
+                </div>
+
+                <div id="question55" style="display:none;">
+                    <p>5/7. Where do you put your hands when wiping poop?</p>
+                    <label>
+                        <input type="radio" name="q55" value="2"> hands go forward
+                    </label>
+                    <label>
+                        <input type="radio" name="q55" value="4"> hands go back
+                    </label>
+                    <br><br>
+                    <input type="button" value="이전" onclick="nextQuestion11('question44')">
+                    <input type="button" value="다음" onclick="nextQuestion11('question66')">
+                </div>
+
+                <div id="question66" style="display:none;">
+                    <p>6/7. Walk for more than 1 hour a day. Or should I do some appropriate exercise?</p>
+                    <label>
+                        <input type="radio" name="q66" value="2"> yes
+                    </label>
+                    <label>
+                        <input type="radio" name="q66" value="4"> no
+                    </label>
+                    <br><br>
+                    <input type="button" value="이전" onclick="nextQuestion11('question55')">
+                    <input type="button" value="다음" onclick="nextQuestion11('question77')">
+                </div>
+
+                <div id="question77" style="display:none;">
+                    <p>7/7. Sleep more than 7 hours a day.</p>
+                    <label>
+                        <input type="radio" name="q77" value="2"> yes
+                    </label>
+                    <label>
+                        <input type="radio" name="q77" value="4"> no
+                    </label>
+                    <br><br>
+                    <input type="button" value="이전" onclick="nextQuestion11('question66')">
+                    <input type="button" value="다음" onclick="nextQuestion11('question88')">
+                </div>
+
+
+                
+                <div id="question88" style="display:none;">
                     <p>All questions have been answered. Click the [Check my last] button</p>
                 </div>
             </form>
